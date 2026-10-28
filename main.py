@@ -2,6 +2,7 @@
 from src.data_loader import SalesDataLoader
 from src.validators import check_dataframe
 from src.analytics import SalesAnalytics
+from src.visualizer import SalesVisualizer
 
 
 def main():
@@ -73,6 +74,13 @@ def main():
     analytics.save_reports()
 
     print("\nPhase 2 analytics completed successfully!")
+
+    
+    print("\n===== GENERATING VISUALIZATIONS =====")
+    visualizer =  SalesVisualizer(clean_df)
+    visualizer.generate_all()
+    
+    print("\nPhase 3 visualization completed successfully")
 
 
 if __name__ == "__main__":
